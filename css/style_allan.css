@@ -1,0 +1,356 @@
+/* Paleta de colores */
+:root {
+  --color-primario: #003f5c;
+  --color-secundario: #58508d;
+  --color-acento: #ffca28;
+  --color-texto: #ffa600;
+  --color-texto-secundario: #ff6361;
+  --color-hover: #bc509055;
+  --color-texto-blanco: #ffffff;
+  --color-texto-negro: #0a0a0a;
+}
+
+/* Estilos universales */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+h1,
+h2,
+p,
+li,
+a {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+/* Navbar */
+.navbar {
+  background-color: var(--color-primario);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.navbar li {
+  margin-right: 20px;
+}
+.navbar a {
+  display: block;
+  color: var(--color-texto);
+  text-decoration: none;
+  font-weight: 200;
+  padding: 16px 24px;
+  transition: background 0.3s;
+  border-radius: 5px;
+}
+
+.navbar a:hover {
+  background-color: var(--color-hover);
+}
+
+.logo-container {
+  position: absolute;
+  left: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px; /* Ajusta según sea necesario */
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-texto);
+  margin-left: 10px; /* Espacio entre el logo y el texto */
+}
+
+.guitar-icon {
+  width: 48px;
+  height: 48px;
+  background-image: url('guitar-icon.png'); /* Asegúrate de tener esta imagen en tu proyecto */
+  background-size: cover;
+  display: inline-block;
+}
+
+/* Hero section */
+.hero {
+  /* Configuraciones de imagen de background */
+  background-image: url('/images/fondo-guitarra-colorizada.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+
+  /* Hero content */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 120px;
+  gap: 120px; /* Espacio entre el contenido y los lados */
+  color: var(--color-texto-secundario);
+}
+
+.hero-content {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  border-radius: 25px; /* Bordes redondeados */
+  background-color: var(--color-secundario);
+}
+
+.hero-side {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.hero-side img {
+  width: auto;
+  height: 80vh;
+  margin-top: 5vh;
+  border-radius: 25px; /* Bordes redondeados para la imagen */
+}
+
+.hero-content.left {
+  order: 1; /* Asegura que el contenido esté a la izquierda */
+}
+
+.hero-content.right {
+  order: 2; /* Asegura que el contenido esté a la derecha */
+}
+
+.hero-side {
+  order: 2;
+}
+
+.hero-content.right ~ .hero-side {
+  order: 1; /* Asegura que el contenido esté a la derecha */
+}
+
+.hero-title {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: var(--color-texto-secundario);
+}
+
+.hero-description {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: var(--color-texto);
+}
+
+.hero-features {
+  margin: 0;
+  color: var(--color-texto-blanco);
+}
+
+.hero-features li {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  text-align: left;
+}
+
+/*Servicios*/
+
+.services {
+  background: linear-gradient(
+    90deg,
+    var(--color-primario),
+    var(--color-texto-blanco),
+    var(--color-texto-blanco),
+    var(--color-texto-blanco),
+    var(--color-primario)
+  );
+  color: var(--color-texto-blanco);
+  padding: 60px 0;
+}
+
+.services h2 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: var(--color-texto);
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px; /* Espacio entre la imagen y la lista */
+}
+
+.services-container img {
+  max-width: 300px; /* Ajusta el tamaño de la imagen según sea necesario */
+  border-radius: 15px; /* Bordes redondeados para la imagen */
+}
+
+.services-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.services-list li {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  color: var(--color-texto-secundario);
+}
+
+.services-list li::before {
+  content: '✔️'; /* Icono de verificación */
+  margin-right: 10px;
+}
+
+/* About section */
+.about {
+  background-color: var(--color-secundario);
+  color: var(--color-texto-blanco);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: var(--color-texto-secundario);
+}
+
+.about-video {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  display: block;
+  margin: 32px auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  background: #000;
+}
+
+/* Contact section */
+.contact {
+  background-color: var(--color-primario);
+  color: var(--color-texto-blanco);
+  padding: 60px 20px;
+  text-align: center;
+}
+.contact h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: var(--color-texto-secundario);
+}
+
+.contact-header {
+  margin-bottom: 40px;
+  color: var(--color-texto);
+}
+
+.contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px; /* Espacio entre la imagen y el formulario */
+}
+
+.contact-form {
+  flex: 1;
+  max-width: 500px;
+  background-color: var(--color-secundario);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: var(--color-texto);
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--color-hover);
+  color: var(--color-text);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border: 2px solid var(--color-acento);
+  box-shadow: 0 0 0 2px var(--color-acento, #ffca28);
+}
+
+.contact-form button {
+  padding: 10px;
+  border-radius: 25px;
+  height: 50px;
+  background-color: var(--color-primario);
+  color: var(--color-texto-blanco);
+  font-size: large;
+  font-weight: bold;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: var(--color-acento);
+  cursor: pointer;
+  color: var(--color-texto-secundario);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 80px; /* Ajusta según lo que necesites */
+  max-height: 350px; /* Ajusta según lo que necesites */
+}
+
+.contact-side {
+  flex: 1;
+  max-width: 400px;
+}
+
+.contact-image {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+  background-color: var(--color-texto-negro);
+  color: var(--color-texto-blanco);
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
