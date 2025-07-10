@@ -95,7 +95,7 @@ a {
 /* Hero section */
 .hero {
   /* Configuraciones de imagen de background */
-  background-image: url('images/fondo-guitarra-colorizada.webp');
+  background-image: url('../images/fondo-guitarra-colorizada.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
