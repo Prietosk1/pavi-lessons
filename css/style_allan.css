@@ -87,7 +87,6 @@ a {
 .guitar-icon {
   width: 48px;
   height: 48px;
-  background-image: url('guitar-icon.png'); /* Asegúrate de tener esta imagen en tu proyecto */
   background-size: cover;
   display: inline-block;
 }
